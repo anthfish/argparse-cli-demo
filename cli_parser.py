@@ -10,4 +10,10 @@ args = parser.parse_args()
 print("Reading file:", args.input)
 if args.verbose:
 	print("Verbose mode is ON - now printing extra info...")
-print(f"Output format: {args.format}")
+
+if args.format == "json":
+	print("Formatting output as JSON...")
+elif args.format == "csv":
+	print("Formatting output as CSV...")
+else:
+	print(f"Unknown format '{args.format}', defaulting to plain text.")
